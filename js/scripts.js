@@ -1,8 +1,7 @@
 //Business Logic
-const userInput = 5;
-function beepBoop(userInput) {
+function beepBoop(number) {
 let arrayCount = [];
-for (let i = 0; i <= userInput; i++) {
+for (let i = 0; i <= number; i++) {
   arrayCount.push(i);
 }
 }
