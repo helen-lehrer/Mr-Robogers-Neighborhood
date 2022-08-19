@@ -57,11 +57,12 @@ function handleFormSubmission(event) {
   event.preventDefault();
   resetSubmission();
   beepBoop();
-  let newArrayValue = newArray.join(" ");
+  let newArrayValue = newArray.join(", ");
   const newParagraph = document.createElement("p");
   newParagraph.innerText = newArrayValue;
   const currentParagraph = document.getElementById("p1");
   document.body.insertBefore(newParagraph, currentParagraph);
+  newParagraph.setAttribute("class", "container"); 
 }
 
 window.addEventListener("load", function () {
