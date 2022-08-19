@@ -28,6 +28,6 @@ Test: "It should replace any digit that is 1 with "Beep!", 2 with "Boop!", and 3
 Code: replaceDigits("0, 1, 2, 3, 4, 5")
 Expected Output: "0, 'Beep!', 'Boop!', 'Won't you be my neighbor?', 4, 5"
 
-Test: "It should replace replace any number that contains 1 with "Beep!", contains 2 with "Boop!", and contains 3 with "Won't you be my neighbor?""
+Test: "It should replace replace any number that contains 1 with "Beep!", contains 2 with "Boop!", and contains 3 with "Won't you be my neighbor?" The first substitution should apply unless the second does, and the same with the second and third."
 Code: replaceDigits("0, 1, 2, 3, 4, 5, 6, 7, 8, 8, 10, 11, 12, 13")
 Expected Output: "0, 'Beep!', 'Boop!', 'Won't you be my neighbor?', 4, 5, 6, 7, 8, 9, 'Beep!', 'Beep!', 'Boop!', 'Won't you be my neighbor?'"
