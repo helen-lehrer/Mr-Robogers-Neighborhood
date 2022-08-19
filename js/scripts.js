@@ -15,14 +15,19 @@ function convertToString () {
 });
 };
 
+let replacedArray = stringArray;
+function replaceDigits() {
+  if (replacedArray.includeas("1")) {
+    replacedArray.splice()
+  }
+  beepedArray = stringArray.replaceAll("1", "'Beep!'").replaceAll("2", "'Boop!'").replaceAll("3", "'Won't you be my neighbor?'");
+  return beepedArray;
+}
+
+/*
 let joinedString = stringArray;
 function joinString () {
   joinedString = stringArray.join(" ");
   return joinedString;
 }
-
-let beepedArray = joinedString;
-function replaceDigits() {
-  beepedArray = joinedString.replaceAll("1", "'Beep!'").replaceAll("2", "'Boop!'");
-  return beepedArray;
-}
+*/
