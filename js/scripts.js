@@ -40,13 +40,28 @@ function beepBoop() {
     replaceArray();
     return newArray;
 };
+
 //UI Logic
+
+function resetSubmission() {
+  const oldResult = document.querySelector("p");
+  if (oldResult === null) {
+
+  } else if (oldResult.value = document.querySelector("p")) {
+    oldResult.remove();
+    newArray = [];
+}
+};
+
 function handleFormSubmission(event) {
   event.preventDefault();
+  resetSubmission();
   beepBoop();
   let newArrayValue = newArray.join(" ");
-  const paragraph = document.createElement(p);
-  paragraph.innerText = newArrayValue;
+  const newParagraph = document.createElement("p");
+  newParagraph.innerText = newArrayValue;
+  const currentParagraph = document.getElementById("p1");
+  document.body.insertBefore(newParagraph, currentParagraph);
 }
 
 window.addEventListener("load", function () {
