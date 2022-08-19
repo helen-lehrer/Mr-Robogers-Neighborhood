@@ -2,7 +2,7 @@
 
 const userInput= 5;
 let arrayCount = [];
-function beepBoop(userInput) {
+function countUp(userInput) {
 for (let i = 0; i <= userInput; i++) {
   arrayCount.push(i);
 };
@@ -15,15 +15,14 @@ function convertToString () {
 });
 };
 
+let joinedString = stringArray;
 function joinString () {
-  stringArray = stringArray.join(" ");
-  return stringArray;
+  joinedString = stringArray.join(" ");
+  return joinedString;
 }
-/*
-let stringArray = stringArray.join(" ");
+
+let beepedArray = joinedString;
 function replaceDigits() {
-arrayCount.forEach(function(number) {
-  
-})
+  beepedArray = joinedString.replaceAll("1", "'Beep!'").replaceAll("2", "'Boop!'");
+  return beepedArray;
 }
-*/
