@@ -1,57 +1,57 @@
 //Business Logic
-function submitForm(event) {
-  event.preventDefault();
-  const userInput = document.getElementById("user-input").value;
+let newArray = [];
+function beepBoop() {
+    const userInput = document.getElementById("user-input").value;
+    let arrayCount = [];
+    function countUp(userInput) {
+      for (let i = 0; i <= userInput; i++) {
+        arrayCount.push(i);
+      };
+    };
+    countUp(userInput);
 
-  let arrayCount = [];
-  function countUp(userInput) {
-  for (let i = 0; i <= userInput; i++) {
-    arrayCount.push(i);
-  };
-  };
-  countUp(userInput);
+    let stringArray = arrayCount;
+    function convertToString() {
+      stringArray = arrayCount.map(function(number) {
+      return String(number);
+    }); 
+    };
+    convertToString();
 
-  let stringArray = arrayCount;
-  function convertToString() {
-    stringArray = arrayCount.map(function(number) {
-    return String(number);
-  }); 
-  };
-  convertToString();
-
-  let newArray = [];
-  function replaceArray() {
-  const substring1 = '1';
-  const substring2 = '2';
-  const substring3 = '3';
-  stringArray.forEach(function (number) {
-    if (number.includes(substring3)) {
-      number = number.replace(number, "Won't you be my neighbor?");
-      newArray.push(number);
-    } else if (number.includes(substring2)) {
-      number = number.replace(number, "Boop!");
-      newArray.push(number);
-    } else if (number.includes(substring1)) {
-      number = number.replace(number, "Beep!");
-      newArray.push(number);
-    } else {
-      newArray.push(number);
-    }
-    });
-  };
-  replaceArray();
-
-  function publishAnswer() {
-    const p = document.getElementById("answer");
-    p.innerText = newArray.join(" ");
-  };
-  publishAnswer();
+    function replaceArray() {
+    const substring1 = '1';
+    const substring2 = '2';
+    const substring3 = '3';
+    stringArray.forEach(function (number) {
+      if (number.includes(substring3)) {
+        number = number.replace(number, "Won't you be my neighbor?");
+        newArray.push(number);
+      } else if (number.includes(substring2)) {
+        number = number.replace(number, "Boop!");
+        newArray.push(number);
+      } else if (number.includes(substring1)) {
+        number = number.replace(number, "Beep!");
+        newArray.push(number);
+      } else {
+        newArray.push(number);
+      }
+      });
+    };
+    replaceArray();
+    return newArray;
 };
 //UI Logic
+function handleFormSubmission(event) {
+  event.preventDefault();
+  beepBoop();
+  let newArrayValue = newArray.join(" ");
+  const paragraph = document.createElement(p);
+  paragraph.innerText = newArrayValue;
+}
 
 window.addEventListener("load", function () {
   const form = document.getElementById("number-input-form");
-  form.addEventListener("submit", submitForm);
+  form.addEventListener("submit", handleFormSubmission);
 });
 
 
