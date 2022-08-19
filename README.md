@@ -1,3 +1,44 @@
+# Mr. Roboger's Neighborhood
+
+**By: Helen Lehrer**  
+**Date Created: 8/19/2022**
+
+### [Link to Site]()
+---
+### Technologies Used
+* HTML
+* CSS
+* Javascript
+---
+
+### Description
+
+`Mr. Roboger's Neighborhood` is web application that takes a number from the user and returns a list of values from 0 to the user's inputted number with the following substitutions made within the returned list: 
+* `For numbers that contain a 1, all digits are replaced with "Beep!"`
+* `For numbers that contain a 2, all digits are replaced with "Boop!"`
+* `For numbers that contain a 3, all digits are replaced with "Won't you be my neighbor?"`
+
+These substitutions are written from least to most important. The first substitution should apply unless the second does, and the same with the second and third. In other words, the substitution for the number 1 should apply unless there's a 2 present in the number. Then, the substitution for the number 2 should apply unless there's a 3 present in the number.
+
+This codebase uses loops, arrays, and branching logic. The user is able to enter a new number and see new results over and over again. Each element is printed in the list to the webpage.
+
+---
+
+### Setup/Installation Requirements
+
+#### To access the code in a source code editor: 
+```bash
+$ git clone https://github.com/helen-lehrer/Mr-Robogers-Neighborhood
+$ cd programming-language-suggester
+$ code .
+```
+To use the application, simply preview index.html in your browser.
+
+---
+### Known Bugs
+* none
+---
+### TDD
 Describe: countUp()
 
 Test: "It should return an array of numbers from 0 to the user's inputted number"
@@ -14,15 +55,7 @@ Expected Output: ["0", "1", "2", "3", "4", "5"]
 
 -----
 
-Describe: joinString()
-
-Test: "It should concatenate all elements in the array into one single string." 
-Code: joinString(["0", "1", "2", "3", "4", "5"])
-Expected Output: "0, 1, 2, 3, 4, 5"
-
------
-
-Describe: replaceDigits()
+Describe: replaceArray()
 
 Test: "It should replace any digit that is 1 with "Beep!", 2 with "Boop!", and 3 with "Won't you be my neighbor?"" 
 Code: replaceDigits("0, 1, 2, 3, 4, 5")
