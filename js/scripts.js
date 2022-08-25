@@ -1,68 +1,61 @@
 //Business Logic
-let newArray = [];
-function beepBoop() {
-    const userInput = document.getElementById("user-input").value;
-    let arrayCount = [];
-    function countUp(userInput) {
-      for (let i = 0; i <= userInput; i++) {
-        arrayCount.push(i);
-      };
-    };
-    countUp(userInput);
+function countUp(userInput) {
+  let outputArray = [];
+  for (let i = 0; i <= userInput; i++) {
+    
+    outputArray.push(i);
+  };
+  return outputArray;
+};
 
-    let stringArray = arrayCount;
-    function convertToString() {
-      stringArray = arrayCount.map(function(number) {
-      return String(number);
-    }); 
-    };
-    convertToString();
-
-    function replaceArray() {
-    const substring1 = '1';
-    const substring2 = '2';
-    const substring3 = '3';
-    stringArray.forEach(function (number) {
-      if (number.includes(substring3)) {
-        number = number.replace(number, "Won't you be my neighbor?");
-        newArray.push(number);
-      } else if (number.includes(substring2)) {
-        number = number.replace(number, "Boop!");
-        newArray.push(number);
-      } else if (number.includes(substring1)) {
-        number = number.replace(number, "Beep!");
-        newArray.push(number);
-      } else {
-        newArray.push(number);
-      }
-      });
-    };
-    replaceArray();
-    return newArray;
+function replaceArray(countUp) {
+  const substring1 = '1';
+  const substring2 = '2';
+  const substring3 = '3';
+  let newArray = [];
+  countUp.forEach(function (number) {
+    if (number.toString().includes(substring3)) {
+      number = number.toString().replace(number, "Won't you be my neighbor?");
+      newArray.push(number);
+    } else if (number.toString().includes(substring2)) {
+      number = number.toString().replace(number, "Boop!");
+      newArray.push(number);
+    } else if (number.toString().includes(substring1)) {
+      number = number.toString().replace(number, "Beep!");
+      newArray.push(number);
+    } else {
+      newArray.push(number);
+    }
+    });
+  return newArray;
 };
 
 //UI Logic
 
 function resetSubmission() {
   const oldResult = document.querySelector("p");
-  if (oldResult === null) {
-
-  } else if (oldResult.value = document.querySelector("p")) {
+  if (oldResult) {
     oldResult.remove();
-    newArray = [];
-}
+    outputArray = [];
+  } 
 };
 
 function handleFormSubmission(event) {
   event.preventDefault();
   resetSubmission();
-  beepBoop();
+  
+  const userInput = document.getElementById("user-input").value;
+  let outputArray = countUp(userInput);
+  let newArray = replaceArray(outputArray);
+
   let newArrayValue = newArray.join(", ");
-  const newParagraph = document.createElement("p");
-  newParagraph.innerText = newArrayValue;
-  const currentParagraph = document.getElementById("p1");
-  document.body.insertBefore(newParagraph, currentParagraph);
-  newParagraph.setAttribute("class", "container"); 
+  const p = document.createElement("p");
+  p.innerText = newArrayValue;
+  const div = document.createElement("div");
+  div.append(p);
+  p.setAttribute("class", "container");
+  const existingDiv = document.getElementById("existing-div");
+  existingDiv.after(div);
 }
 
 window.addEventListener("load", function () {
