@@ -13,17 +13,16 @@ function countUp(userInput) {
     }
   };
   return outputArray;
-};
+}
 
 //UI Logic
-
 function resetSubmission() {
   const oldResult = document.querySelector("p");
   if (oldResult) {
     oldResult.remove();
     outputArray = [];
   } 
-};
+}
 
 function handleFormSubmission(event) {
   event.preventDefault();
@@ -45,7 +44,7 @@ function handleFormSubmission(event) {
 window.addEventListener("load", function () {
   const form = document.getElementById("i-input-form");
   form.addEventListener("submit", handleFormSubmission);
-});
+})
 
 
 

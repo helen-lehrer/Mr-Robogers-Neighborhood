@@ -38,6 +38,13 @@ To use the application, simply preview index.html in your browser.
 ---
 ### Known Bugs
 * none
+
+---
+
+### License
+[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
+
+&copy; _Copyright 2022 Helen Lehrer_
 ---
 ### TDD
 Describe: countUp()
