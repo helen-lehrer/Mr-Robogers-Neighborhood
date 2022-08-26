@@ -2,32 +2,17 @@
 function countUp(userInput) {
   let outputArray = [];
   for (let i = 0; i <= userInput; i++) {
-    
-    outputArray.push(i);
+    if (i.toString().includes('3')) {
+      outputArray.push("Won't you be my neighbor?");
+    } else if (i.toString().includes('2')) {
+      outputArray.push("Boop!");
+    } else if (i.toString().includes('1')) {
+      outputArray.push("Beep!");
+    } else {
+      outputArray.push(i);
+    }
   };
   return outputArray;
-};
-
-function replaceArray(countUp) {
-  const substring1 = '1';
-  const substring2 = '2';
-  const substring3 = '3';
-  let newArray = [];
-  countUp.forEach(function (number) {
-    if (number.toString().includes(substring3)) {
-      number = number.toString().replace(number, "Won't you be my neighbor?");
-      newArray.push(number);
-    } else if (number.toString().includes(substring2)) {
-      number = number.toString().replace(number, "Boop!");
-      newArray.push(number);
-    } else if (number.toString().includes(substring1)) {
-      number = number.toString().replace(number, "Beep!");
-      newArray.push(number);
-    } else {
-      newArray.push(number);
-    }
-    });
-  return newArray;
 };
 
 //UI Logic
@@ -44,13 +29,12 @@ function handleFormSubmission(event) {
   event.preventDefault();
   resetSubmission();
   
-  const userInput = document.getElementById("user-input").value;
+  const userInput = parseInt(document.getElementById("user-input").value);
   let outputArray = countUp(userInput);
-  let newArray = replaceArray(outputArray);
 
-  let newArrayValue = newArray.join(", ");
+  let outputArrayDisplay = outputArray.join(", ");
   const p = document.createElement("p");
-  p.innerText = newArrayValue;
+  p.innerText = outputArrayDisplay;
   const div = document.createElement("div");
   div.append(p);
   p.setAttribute("class", "container");
@@ -59,7 +43,7 @@ function handleFormSubmission(event) {
 }
 
 window.addEventListener("load", function () {
-  const form = document.getElementById("number-input-form");
+  const form = document.getElementById("i-input-form");
   form.addEventListener("submit", handleFormSubmission);
 });
 
