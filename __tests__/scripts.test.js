@@ -5,4 +5,9 @@ describe('countUp', () => {
   let countUpValue = countUp();
     expect(countUpValue).toEqual([]);
   });
+  test('should replace specified numbers with corresponding strings', () => {
+  let userInput = 1;
+  let countUpResult = countUp(userInput);
+    expect(countUpResult).toEqual([0, "Beep!"]);
+  });
 });
