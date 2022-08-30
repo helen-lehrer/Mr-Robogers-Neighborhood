@@ -1,19 +1,7 @@
-//Business Logic
-function countUp(userInput) {
-  let outputArray = [];
-  for (let i = 0; i <= userInput; i++) {
-    if (i.toString().includes('3')) {
-      outputArray.push("Won't you be my neighbor?");
-    } else if (i.toString().includes('2')) {
-      outputArray.push("Boop!");
-    } else if (i.toString().includes('1')) {
-      outputArray.push("Beep!");
-    } else {
-      outputArray.push(i);
-    }
-  };
-  return outputArray;
-}
+import countUp from './scripts.js';
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './css/styles.css';
 
 //UI Logic
 function resetSubmission() {
@@ -45,6 +33,3 @@ window.addEventListener("load", function () {
   const form = document.getElementById("i-input-form");
   form.addEventListener("submit", handleFormSubmission);
 })
-
-
-
